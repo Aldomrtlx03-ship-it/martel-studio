@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MT STUDIO | Letreros Neón, Cajas de Luz y Personalizados</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandRed: '#E63946',
+                        brandYellow: '#FFB703',
+                        brandDark: '#121212',
+                        brandDarker: '#0A0A0A',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        .neon-glow {
+            text-shadow: 0 0 10px rgba(255, 183, 3, 0.7), 0 0 20px rgba(230, 57, 70, 0.5);
+        }
+        .box-glow {
+            box-shadow: 0 10px 30px -10px rgba(230, 57, 70, 0.3);
+        }
+        .yellow-glow {
+            box-shadow: 0 0 25px rgba(255, 183, 3, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-brandDarker text-white font-sans antialiased selection:bg-brandYellow selection:text-black">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-gradient-to-r from-brandRed via-brandYellow to-brandRed text-black text-xs md:text-sm font-bold py-2 px-4 text-center tracking-wide uppercase">
+        <i class="fa-solid fa-bolt mr-2">></i> Envios rápidos a todo México | Cotiza por WhatsApp al 55 6961 0333 <i class="fa-solid fa-bolt ml-2"></i>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-50 bg-brandDark/95 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo Container -->
+            <a href="#" class="flex items-center space-x-3 group">
+                <div class="bg-white p-1.5 rounded-xl shadow-lg border border-brandYellow/50 group-hover:scale-105 transition-transform">
+                    <img src="Recurso 2@3x-100.jpg" alt="MT STUDIO Logo" class="h-10 w-auto object-contain">
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-xl font-black tracking-wider text-white">MT <span class="text-brandYellow">STUDIO</span></span>
+                    <span class="text-[10px] text-gray-400 tracking-widest uppercase">Personalización & Neón</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center space-x-8 font-medium text-sm">
+                <a href="#inicio" class="text-white hover:text-brandYellow transition-colors">Inicio</a>
+                <a href="#productos" class="text-white hover:text-brandYellow transition-colors">Productos</a>
+                <a href="#configurador" class="text-white hover:text-brandYellow transition-colors">Cotizador Neón</a>
+                <a href="#nosotros" class="text-white hover:text-brandYellow transition-colors">¿Por qué nosotros?</a>
+                <a href="#contacto" class="text-white hover:text-brandYellow transition-colors">Contacto</a>
+            </nav>
+
+            <!-- CTA / WhatsApp Button Desktop -->
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="https://wa.me/525569610333?text=Hola%20MT%20Studio,%20me%20interesa%20cotizar%20un%20producto" target="_blank" 
+                   class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-5 py-2.5 rounded-full shadow-lg flex items-center space-x-2 transition-all transform hover:-translate-y-0.5">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>55 6961 0333</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-white text-2xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brandDark border-b border-white/10 px-4 pt-2 pb-6 space-y-3">
+            <a href="#inicio" class="block text-white hover:text-brandYellow py-2 border-b border-white/5">Inicio</a>
+            <a href="#productos" class="block text-white hover:text-brandYellow py-2 border-b border-white/5">Productos</a>
+            <a href="#configurador" class="block text-white hover:text-brandYellow py-2 border-b border-white/5">Cotizador Neón</a>
+            <a href="#nosotros" class="block text-white hover:text-brandYellow py-2 border-b border-white/5">¿Por qué nosotros?</a>
+            <a href="#contacto" class="block text-white hover:text-brandYellow py-2 border-b border-white/5">Contacto</a>
+            <a href="https://wa.me/525569610333?text=Hola%20MT%20Studio,%20me%20interesa%20cotizar%20un%20producto" target="_blank" 
+               class="w-full bg-emerald-600 text-white font-bold py-3 rounded-xl flex items-center justify-center space-x-2 mt-4">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                <span>WhatsApp: 55 6961 0333</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative overflow-hidden bg-gradient-to-b from-brandDarker via-neutral-900 to-brandDark py-20 lg:py-32">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#FFB703_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 bg-brandRed/20 border border-brandRed/40 px-4 py-1.5 rounded-full text-brandYellow text-xs sm:text-sm font-semibold uppercase tracking-wider">
+                        <i class="fa-solid fa-star text-brandYellow"></i>
+                        <span>Diseño y Fabricación Profesional</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight">
+                        Ilumina tus ideas con <span class="text-brandYellow neon-glow">MT STUDIO</span>
+                    </h1>
+                    <p class="text-gray-300 text-base sm:text-lg max-w-xl mx-auto lg:mx-0">
+                        Especialistas en letreros de neón LED personalizados, cajas de luz de alto impacto, espejos para Instagram y artículos promocionales que hacen destacar tu negocio u hogar.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4 pt-4">
+                        <a href="#configurador" class="w-full sm:w-auto bg-brandYellow hover:bg-yellow-400 text-black font-extrabold px-8 py-4 rounded-xl shadow-lg yellow-glow transition-all transform hover:-translate-y-1 text-center">
+                            <i class="fa-solid fa-wand-magic-sparkles mr-2"></i> Cotiza tu Neón
+                        </a>
+                        <a href="https://wa.me/525569610333?text=Hola%20MT%20Studio,%20quiero%20ver%20su%20catalogo" target="_blank" class="w-full sm:w-auto bg-brandRed hover:bg-red-700 text-white font-bold px-8 py-4 rounded-xl shadow-lg box-glow transition-all transform hover:-translate-y-1 text-center">
+                            <i class="fa-brands fa-whatsapp mr-2"></i> Pedir por WhatsApp
+                        </a>
+                    </div>
+                    <div class="pt-6 flex items-center justify-center lg:justify-start space-x-6 text-xs text-gray-400">
+                        <div class="flex items-center space-x-2"><i class="fa-solid fa-check text-brandYellow"></i><span>Garantía de calidad</span></div>
+                        <div class="flex items-center space-x-2"><i class="fa-solid fa-check text-brandYellow"></i><span>Envíos seguros</span></div>
+                        <div class="flex items-center space-x-2"><i class="fa-solid fa-check text-brandYellow"></i><span>Diseño gratis</span></div>
+                    </div>
+                </div>
+
+                <!-- Hero Visual Representation -->
+                <div class="relative flex justify-center">
+                    <div class="w-full max-w-md bg-gradient-to-tr from-brandRed/30 to-brandYellow/20 p-2 rounded-3xl border border-white/10 shadow-2xl relative">
+                        <div class="absolute -top-4 -right-4 bg-brandYellow text-black font-black text-xs px-3 py-1.5 rounded-lg uppercase tracking-wider shadow-lg z-20">
+                            ¡Alta Demanda!
+                        </div>
+                        <div class="bg-brandDark rounded-2xl p-6 text-center relative overflow-hidden">
+                            <div class="absolute inset-0 bg-black/55 z-10"></div>
+                            <img src="https://images.unsplash.com/photo-1563089145-599997674d42?auto=format&fit=crop&q=80&w=600" alt="Neon Preview" class="rounded-xl w-full h-80 object-cover relative z-0 opacity-80">
+                            <div class="absolute inset-0 flex flex-col items-center justify-center z-20 p-4">
+                                <div class="bg-black/80 backdrop-blur-md px-6 py-4 rounded-2xl border border-brandYellow/50 shadow-2xl">
+                                    <h3 class="text-2xl font-black text-brandYellow tracking-wider">MT STUDIO</h3>
+                                    <p class="text-xs text-white uppercase tracking-widest mt-1">Neón LED & Iluminación</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products / Services Catalog -->
+    <section id="productos" class="py-20 bg-neutral-900 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brandYellow text-sm font-bold uppercase tracking-widest">Catálogo Exclusivo</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white mt-2">Nuestros Productos Principales</h2>
+                <p class="text-gray-400 mt-3 text-sm sm:text-base">Transformamos cualquier espacio con productos modernos, duraderos y diseñados a la medida de tu marca o evento.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Product 1 -->
+                <div class="bg-brandDark rounded-2xl overflow-hidden border border-white/10 hover:border-brandYellow/50 transition-all group flex flex-col">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&q=80&w=600" alt="Letreros de Neón" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-3 right-3 bg-brandRed text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Más Vendido</div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white group-hover:text-brandYellow transition-colors">Letreros de Neón LED</h3>
+                            <p class="text-gray-400 text-sm mt-2">Fabricamos tu logo, frase o diseño favorito en neón flexible de alta durabilidad y brillo intenso.</p>
+                        </div>
+                        <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+                            <span class="text-xs text-brandYellow font-semibold uppercase tracking-wider">Diseño personalizado</span>
+                            <a href="https://wa.me/525569610333?text=Hola%20MT%20Studio,%20me%20interesa%20cotizar%20un%20Letrero%20de%20Neón" target="_blank" class="bg-brandRed hover:bg-red-700 text-white text-xs font-bold px-4 py-2 rounded-lg transition-colors">Cotizar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="bg-brandDark rounded-2xl overflow-hidden border border-white/10 hover:border-brandYellow/50 transition-all group flex flex-col">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&q=80&w=600" alt="Cajas de Luz" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-3 right-3 bg-brandYellow text-black text-xs font-bold px-3 py-1 rounded-full uppercase">Negocios</div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white group-hover:text-brandYellow transition-colors">Cajas de Luz</h3>
+                            <p class="text-gray-400 text-sm mt-2">Cajas lumínicas profesionales con impresión en alta definición ideales para exteriores e interiores.</p>
+                        </div>
+                        <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+                            <span class="text-xs text-brandYellow font-semibold uppercase tracking-wider">Acabado Premium</span>
+                            <a href="https://wa.me/525569610333?text=Hola%20MT%20Studio,%20me%20interesa%20cotizar%20una%20Caja%20de%20Luz" target="_blank" class="bg-brandRed hover:bg-red-700 text-white text-xs font-bold px-4 py-2 rounded-lg transition-colors">Cotizar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="bg-brandDark rounded-2xl overflow-hidden border border-white/10 hover:border-brandYellow/50 transition-all group flex flex-col">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=600" alt="Espejos Instagram" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-3 right-3 bg-brandRed text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Tendencia</div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white group-hover:text-brandYellow transition-colors">Espejos Instagram</h3>
+                            <p class="text-gray-400 text-sm mt-2">Espejos iluminados con diseño personalizado para selfies perfectas en boutiques, estudios y eventos.</p>
+                        </div>
+                        <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+                            <span class="text-xs text-brandYellow font-semibold uppercase tracking-wider">Varios tamaños</span>
+                            <a href="https://wa.me/525569610333?text=Hola%20MT%20Studio,%20me%20interesa%20cotizar%20un%20Espejo%20Instagram" target="_blank" class="bg-brandRed hover:bg-red-700 text-white text-xs font-bold px-4 py-2 rounded-lg transition-colors">Cotizar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="bg-brandDark rounded-2xl overflow-hidden border border-white/10 hover:border-brandYellow/50 transition-all group flex flex-col">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&q=80&w=600" alt="Artículos Personalizados" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-3 right-3 bg-brandYellow text-black text-xs font-bold px-3 py-1 rounded-full uppercase">Eventos</div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white group-hover:text-brandYellow transition-colors">Artículos Personalizados</h3>
+                            <p class="text-gray-400 text-sm mt-2">Artículos promocionales, señalización corporativa y detalles únicos grabados o impresos a láser.</p>
+                        </div>
+                        <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+                            <span class="text-xs text-brandYellow font-semibold uppercase tracking-wider">Mayoreo y Menudeo</span>
+                            <a href="https://wa.me/525569610333?text=Hola%20MT%20Studio,%20me%20interesan%20artículos%20personalizados" target="_blank" class="bg-brandRed hover:bg-red-700 text-white text-xs font-bold px-4 py-2 rounded-lg transition-colors">Cotizar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Neon / Product Estimator -->
+    <section id="configurador" class="py-20 bg-brandDarker relative overflow-hidden border-t border-white/5">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="bg-brandDark border border-white/10 rounded-3xl p-6 sm:p-10 shadow-2xl">
+                <div class="text-center mb-8">
+                    <span class="text-brandYellow text-xs font-bold uppercase tracking-widest bg-brandYellow/10 px-3 py-1 rounded-full border border-brandYellow/30">Herramienta Interactiva</span>
+                    <h2 class="text-2xl sm:text-3xl font-black text-white mt-3">Calculadora y Creador de Neón Express</h2>
+                    <p class="text-gray-400 text-sm mt-2">Configura tu idea preliminar y envíala directamente por WhatsApp para recibir atención personalizada al instante.</p>
+                </div>
+
+                <div class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-semibold text-white mb-2">1. ¿Qué deseas escribir o fabricar?</label>
+                        <input type="text" id="neon-text" placeholder="Ej. Tu Nombre, Nombre de tu Negocio, Frase..." class="w-full bg-neutral-900 border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brandYellow transition-colors">
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-semibold text-white mb-2">2. Tamaño Aproximado</label>
+                            <select id="neon-size" class="w-full bg-neutral-900 border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brandYellow transition-colors">
+                                <option value="Chico (50cm)">Chico (aprox. 50 cm) - Ideal recámara</option>
+                                <option value="Mediano (80cm)">Mediano (aprox. 80 cm) - Recomendado negocio</option>
+                                <option value="Grande (120cm+)">Grande (1.20m o más) - Gran impacto visual</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-white mb-2">3. Color Principal del Neón</label>
+                            <select id="neon-color" class="w-full bg-neutral-900 border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brandYellow transition-colors">
+                                <option value="Amarillo / Dorado">Amarillo / Dorado Vibrante</option>
+                                <option value="Blanco Cálido">Blanco Cálido</option>
+                                <option value="Blanco Frío">Blanco Frío</option>
+                                <option value="Rojo Intenso">Rojo Intenso</option>
+                                <option value="Azul / Multicolor">Azul / Otro Color</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <button type="button" onclick="sendWhatsAppConfig()" class="w-full bg-gradient-to-r from-brandRed to-brandYellow text-black font-black py-4 rounded-xl shadow-lg hover:opacity-95 transition-all text-center flex items-center justify-center space-x-2 text-base">
+                            <i class="fa-brands fa-whatsapp text-2xl text-black"></i>
+                            <span>Enviar Configuración a WhatsApp (55 6961 0333)</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section id="nosotros" class="py-20 bg-neutral-900 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brandYellow text-sm font-bold uppercase tracking-widest">Excelencia MT STUDIO</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white mt-2">¿Por qué elegirnos?</h2>
+                <p class="text-gray-400 mt-3">Nos distinguimos por la calidad impecable en cada detalle y una atención rápida y cercana.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-brandDark p-8 rounded-2xl border border-white/10 text-center space-y-4">
+                    <div class="w-16 h-16 bg-brandYellow/10 text-brandYellow rounded-2xl flex items-center justify-center mx-auto text-2xl border border-brandYellow/30">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">Tecnología LED Avanzada</h3>
+                    <p class="text-gray-400 text-sm">Neón flexible de última generación con bajo consumo eléctrico, alta durabilidad y sin riesgos de cristal roto.</p>
+                </div>
+
+                <div class="bg-brandDark p-8 rounded-2xl border border-white/10 text-center space-y-4">
+                    <div class="w-16 h-16 bg-brandRed/10 text-brandRed rounded-2xl flex items-center justify-center mx-auto text-2xl border border-brandRed/30">
+                        <i class="fa-solid fa-pen-ruler"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">Diseño 100% Personalizado</h3>
+                    <p class="text-gray-400 text-sm">Adaptamos cualquier logotipo, tipografía o idea creativa al tamaño y formato que requieras.</p>
+                </div>
+
+                <div class="bg-brandDark p-8 rounded-2xl border border-white/10 text-center space-y-4">
+                    <div class="w-16 h-16 bg-yellow-500/10 text-brandYellow rounded-2xl flex items-center justify-center mx-auto text-2xl border border-brandYellow/30">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">Envíos Seguros a Todo México</h3>
+                    <p class="text-gray-400 text-sm">Empaque especializado y reforzado para garantizar que tu producto llegue en perfectas condiciones.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contacto" class="bg-brandDarker border-t border-white/10 text-gray-400 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+                <div class="space-y-4 md:col-span-1">
+                    <div class="bg-white p-2 rounded-xl inline-block">
+                        <img src="Recurso 2@3x-100.jpg" alt="MT STUDIO Logo" class="h-8 w-auto object-contain">
+                    </div>
+                    <p class="text-xs text-gray-400">Creando iluminación y letreros de neón de alto impacto para negocios y hogares en todo México.</p>
+                    <div class="flex space-x-4 pt-2">
+                        <a href="#" class="w-10 h-10 bg-brandDark border border-white/10 rounded-xl flex items-center justify-center text-white hover:text-brandYellow hover:border-brandYellow transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 bg-brandDark border border-white/10 rounded-xl flex items-center justify-center text-white hover:text-brandYellow hover:border-brandYellow transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://wa.me/525569610333" target="_blank" class="w-10 h-10 bg-brandDark border border-white/10 rounded-xl flex items-center justify-center text-white hover:text-emerald-400 hover:border-emerald-400 transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider">Enlaces Rápidos</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#inicio" class="hover:text-brandYellow transition-colors">Inicio</a></li>
+                        <li><a href="#productos" class="hover:text-brandYellow transition-colors">Productos</a></li>
+                        <li><a href="#configurador" class="hover:text-brandYellow transition-colors">Cotizador de Neón</a></li>
+                        <li><a href="#nosotros" class="hover:text-brandYellow transition-colors">¿Por qué nosotros?</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider">Productos</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#productos" class="hover:text-brandYellow transition-colors">Letreros de Neón</a></li>
+                        <li><a href="#productos" class="hover:text-brandYellow transition-colors">Cajas de Luz</a></li>
+                        <li><a href="#productos" class="hover:text-brandYellow transition-colors">Espejos Instagram</a></li>
+                        <li><a href="#productos" class="hover:text-brandYellow transition-colors">Artículos Personalizados</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider">Contacto Directo</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-brands fa-whatsapp text-emerald-500 text-lg"></i>
+                            <a href="https://wa.me/525569610333" target="_blank" class="hover:text-white font-medium text-white">55 6961 0333</a>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-solid fa-location-dot text-brandRed"></i>
+                            <span>Atención y Envíos a todo México</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-solid fa-envelope text-brandYellow"></i>
+                            <span>contacto@mtstudio.mx</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500">
+                <p>&copy; 2026 MT STUDIO. Todos los derechos reservados.</p>
+                <p class="mt-2 sm:mt-0">Diseñado con estilo Printymex.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/525569610333?text=Hola%20MT%20Studio,%20necesito%20más%20información%20sobre%20sus%20productos" target="_blank" 
+       class="fixed bottom-6 right-6 z-50 bg-emerald-600 hover:bg-emerald-500 text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center text-3xl transition-transform hover:scale-110 focus:outline-none"
+       title="Chatea por WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- JavaScript for Mobile Menu & WhatsApp Generator -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // WhatsApp Customizer Function
+        function sendWhatsAppConfig() {
+            const text = document.getElementById('neon-text').value.trim() || 'Diseño personalizado';
+            const size = document.getElementById('neon-size').value;
+            const color = document.getElementById('neon-color').value;
+
+            const message = `Hola MT Studio, quiero cotizar un letrero con las siguientes características:%0A- Texto/Idea: *${encodeURIComponent(text)}*%0A- Tamaño: *${encodeURIComponent(size)}*%0A- Color: *${encodeURIComponent(color)}*`;
+            
+            window.open(`https://wa.me/525569610333?text=${message}`, '_blank');
+        }
+    </script>
+
+</body>
+</html>
